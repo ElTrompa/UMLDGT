@@ -1,4 +1,4 @@
-public class Coche {
+public class Coche extends Vehiculos{
     private int numAsientos;
     private int airbags;
 
