@@ -18,5 +18,4 @@ public class Coche {
         this.airbags = airbags;
     }
 
-
 }
