@@ -38,9 +38,9 @@ public class Propietario {
 
     public String toString() {
         return "Propietario{" +
-                "dni='" + dni + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", apellidos='" + apellidos + '\'' +
+                "dni='" + dni + ' ' +
+                ", nombre='" + nombre + ' ' +
+                ", apellidos='" + apellidos + ' ' +
                 ", puntos=" + numPuntos +
                 '}';
     }
