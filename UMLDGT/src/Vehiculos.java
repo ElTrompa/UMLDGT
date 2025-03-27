@@ -1,15 +1,28 @@
 import java.time.LocalDate;
-import java.time.Period;
 
-public class Vehiculos extends Oficina {
-    protected String marca;
-    protected int matricula;
-    protected int kilometragem;
-    protected LocalDate fechaFabricacion;
-    protected int propietarioDNI;
+public abstract class Vehiculos {
+    private int matricula;
+    private String marca;
+    private int kilometragem;
+    private LocalDate fechaFabricacion;
+    private int propietarioDNI;
 
-    public int getEdad() {
-        return Period.between(fechaFabricacion, LocalDate.now()).getYears();
+    // Constructor que acepta los parámetros necesarios
+    public Vehiculos(int matricula, String marca, int kilometragem, LocalDate fechaFabricacion, int propietarioDNI) {
+        this.matricula = matricula;
+        this.marca = marca;
+        this.kilometragem = kilometragem;
+        this.fechaFabricacion = fechaFabricacion;
+        this.propietarioDNI = propietarioDNI;
+    }
+
+    // Getters y setters
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
     }
 
     public String getMarca() {
@@ -20,20 +33,20 @@ public class Vehiculos extends Oficina {
         this.marca = marca;
     }
 
-    public int getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(int matricula) {
-        this.matricula = matricula;
-    }
-
     public int getKilometragem() {
         return kilometragem;
     }
 
     public void setKilometragem(int kilometragem) {
         this.kilometragem = kilometragem;
+    }
+
+    public LocalDate getFechaFabricacion() {
+        return fechaFabricacion;
+    }
+
+    public void setFechaFabricacion(LocalDate fechaFabricacion) {
+        this.fechaFabricacion = fechaFabricacion;
     }
 
     public int getPropietarioDNI() {
@@ -44,12 +57,16 @@ public class Vehiculos extends Oficina {
         this.propietarioDNI = propietarioDNI;
     }
 
+    public int getEdad() {
+        return java.time.Period.between(fechaFabricacion, LocalDate.now()).getYears();
+    }
+
     @Override
     public String toString() {
-        return "Vehiculos{" +
+        return "Vehiculo{" +
                 "matricula=" + matricula +
                 ", marca='" + marca + '\'' +
-                ", kilometragem=" + kilometragem +
+                ", km=" + kilometragem +
                 ", fechaFabricacion=" + fechaFabricacion +
                 ", propietarioDNI=" + propietarioDNI +
                 '}';

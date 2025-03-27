@@ -1,20 +1,20 @@
-import java.time.LocalDate;
+import java.time.LocalDate;  // Importar LocalDate
 
 public class Coche extends Vehiculos {
     private int numAsientos;
     private int airbags;
 
     public Coche(int matricula, String marca, int kilometragem, LocalDate fechaFabricacion, int propietarioDNI, int numAsientos, int airbags) {
-        super(); // Se llama al constructor por defecto de Vehiculos (y de Oficina)
-        this.matricula = matricula;
-        this.marca = marca;
-        this.kilometragem = kilometragem;
-        this.fechaFabricacion = fechaFabricacion;
-        this.propietarioDNI = propietarioDNI;
+        super(matricula, marca, kilometragem, fechaFabricacion, propietarioDNI);
         this.numAsientos = numAsientos;
         this.airbags = airbags;
     }
 
+    public boolean llevaSillitaBebe() {
+        return numAsientos >= 5;  // Suponemos que los coches con 5 o más asientos tienen sillita de bebé.
+    }
+
+    // Getters y setters
     public int getNumAsientos() {
         return numAsientos;
     }
@@ -34,11 +34,11 @@ public class Coche extends Vehiculos {
     @Override
     public String toString() {
         return "Coche{" +
-                "matricula=" + matricula +
-                ", marca='" + marca + '\'' +
-                ", kilometragem=" + kilometragem +
-                ", fechaFabricacion=" + fechaFabricacion +
-                ", propietarioDNI=" + propietarioDNI +
+                "matricula=" + getMatricula() +
+                ", marca='" + getMarca() + '\'' +
+                ", km=" + getKilometragem() +
+                ", fechaFabricacion=" + getFechaFabricacion() +
+                ", propietarioDNI=" + getPropietarioDNI() +
                 ", numAsientos=" + numAsientos +
                 ", airbags=" + airbags +
                 '}';
