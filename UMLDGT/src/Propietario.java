@@ -1,9 +1,20 @@
+/**
+ * Clase Propietario que representa al dueño de uno o varios vehículos.
+ */
 public class Propietario {
     private int dni;
     private String nombre;
     private String apellidos;
     private int puntos;
 
+    /**
+     * Constructor para crear un propietario.
+     *
+     * @param dni      DNI del propietario.
+     * @param nombre   Nombre del propietario.
+     * @param apellidos Apellidos del propietario.
+     * @param puntos   Puntos del carnet del propietario.
+     */
     public Propietario(int dni, String nombre, String apellidos, int puntos) {
         this.dni = dni;
         this.nombre = nombre;
@@ -11,6 +22,7 @@ public class Propietario {
         this.puntos = puntos;
     }
 
+    // Getters
     public int getDni() {
         return dni;
     }

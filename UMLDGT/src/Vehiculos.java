@@ -1,5 +1,9 @@
 import java.time.LocalDate;
 
+/**
+ * Clase abstracta Vehiculos que representa los atributos y comportamientos comunes a
+ * todos los vehículos.
+ */
 public abstract class Vehiculos {
     private int matricula;
     private String marca;
@@ -7,7 +11,15 @@ public abstract class Vehiculos {
     private LocalDate fechaFabricacion;
     private int propietarioDNI;
 
-    // Constructor que acepta los parámetros necesarios
+    /**
+     * Constructor que inicializa los atributos básicos de un vehículo.
+     *
+     * @param matricula        Número de matrícula.
+     * @param marca            Marca del vehículo.
+     * @param kilometragem     Kilometraje del vehículo.
+     * @param fechaFabricacion Fecha de fabricación.
+     * @param propietarioDNI   DNI del propietario.
+     */
     public Vehiculos(int matricula, String marca, int kilometragem, LocalDate fechaFabricacion, int propietarioDNI) {
         this.matricula = matricula;
         this.marca = marca;
@@ -57,6 +69,11 @@ public abstract class Vehiculos {
         this.propietarioDNI = propietarioDNI;
     }
 
+    /**
+     * Calcula la edad del vehículo basándose en la fecha de fabricación.
+     *
+     * @return Edad del vehículo en años.
+     */
     public int getEdad() {
         return java.time.Period.between(fechaFabricacion, LocalDate.now()).getYears();
     }

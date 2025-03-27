@@ -2,12 +2,23 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Clase principal que contiene el menú interactivo para gestionar oficinas,
+ * propietarios y vehículos. Permite registrar y buscar entidades, calcular la
+ * edad de los vehículos y verificar si un coche lleva sillita de bebé.
+ */
 public class Main {
+    // Listas para almacenar las entidades del sistema
     private static ArrayList<Propietario> propietarios = new ArrayList<>();
     private static ArrayList<Vehiculos> vehiculos = new ArrayList<>();
     private static ArrayList<Oficina> oficinas = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Método principal que muestra el menú y ejecuta las acciones seleccionadas.
+     *
+     * @param args Argumentos de línea de comandos.
+     */
     public static void main(String[] args) {
         int opcion;
         do {
@@ -38,6 +49,9 @@ public class Main {
         } while (opcion != 0);
     }
 
+    /**
+     * Registra una nueva oficina solicitando datos al usuario y la añade a la lista.
+     */
     private static void registrarOficina() {
         System.out.print("Ingrese la ciudad de la oficina: ");
         String ciudad = scanner.nextLine();
@@ -58,6 +72,9 @@ public class Main {
         System.out.println("✅ Oficina registrada con éxito.");
     }
 
+    /**
+     * Registra un nuevo propietario solicitando sus datos y lo añade a la lista.
+     */
     private static void registrarPropietario() {
         System.out.print("Ingrese DNI del propietario: ");
         int dni = scanner.nextInt();
@@ -74,6 +91,9 @@ public class Main {
         System.out.println("✅ Propietario registrado correctamente.");
     }
 
+    /**
+     * Registra un nuevo vehículo (Coche, MotoCarretera o MotoAgua) solicitando datos al usuario.
+     */
     private static void registrarVehiculo() {
         System.out.println("Selecciona el tipo de vehículo:");
         System.out.println("1️⃣ Coche");
@@ -131,6 +151,9 @@ public class Main {
         System.out.println("✅ Vehículo registrado con éxito.");
     }
 
+    /**
+     * Busca y muestra un propietario a partir de su DNI.
+     */
     private static void buscarPropietario() {
         System.out.print("Ingrese el DNI del propietario a buscar: ");
         int dni = scanner.nextInt();
@@ -144,6 +167,9 @@ public class Main {
         System.out.println("❌ Propietario no encontrado.");
     }
 
+    /**
+     * Busca y muestra un vehículo a partir de su matrícula.
+     */
     private static void buscarVehiculo() {
         System.out.print("Ingrese la matrícula del vehículo a buscar: ");
         int matricula = scanner.nextInt();
@@ -157,6 +183,9 @@ public class Main {
         System.out.println("❌ Vehículo no encontrado.");
     }
 
+    /**
+     * Calcula y muestra la edad de un vehículo, según su fecha de fabricación.
+     */
     private static void calcularEdadVehiculo() {
         System.out.print("Ingrese la matrícula del vehículo: ");
         int matricula = scanner.nextInt();
@@ -170,6 +199,9 @@ public class Main {
         System.out.println("❌ Vehículo no encontrado.");
     }
 
+    /**
+     * Verifica si un coche (según su matrícula) lleva sillita de bebé.
+     */
     private static void verificarSillita() {
         System.out.print("Ingrese la matrícula del coche: ");
         int matricula = scanner.nextInt();
