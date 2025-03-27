@@ -1,47 +1,39 @@
 public class Propietario {
+    private int dni;
     private String nombre;
     private String apellidos;
-    private int dni;
-    private int numPuntos;
+    private int puntos;
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
+    public Propietario(int dni, String nombre, String apellidos, int puntos) {
+        this.dni = dni;
         this.nombre = nombre;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
+        this.puntos = puntos;
     }
 
     public int getDni() {
         return dni;
     }
 
-    public void setDni(int dni) {
-        this.dni = dni;
+    public String getNombre() {
+        return nombre;
     }
 
-    public int getNumPuntos() {
-        return numPuntos;
+    public String getApellidos() {
+        return apellidos;
     }
 
-    public void setNumPuntos(int numPuntos) {
-        this.numPuntos = numPuntos;
+    public int getPuntos() {
+        return puntos;
     }
 
+    @Override
     public String toString() {
         return "Propietario{" +
-                "dni='" + dni + ' ' +
-                ", nombre='" + nombre + ' ' +
-                ", apellidos='" + apellidos + ' ' +
-                ", puntos=" + numPuntos +
+                "dni=" + dni +
+                ", nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", puntos=" + puntos +
                 '}';
     }
 }
